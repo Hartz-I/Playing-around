@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://tiles and background_foreground/background.png" type="Texture" id=2]
+[ext_resource path="res://tiles and background_foreground/bg_2.png" type="Texture" id=3]
+
+[node name="Level1" type="Node2D"]
+position = Vector2( 21.3574, -5.33936 )
+
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 492.862, 303.074 )
+scale = Vector2( 4.31082, 3.67514 )
+texture = ExtResource( 2 )
+
+[node name="bg_2" type="Sprite" parent="."]
+position = Vector2( 492.256, 444.964 )
+scale = Vector2( 4.22077, 1.9365 )
+texture = ExtResource( 3 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="bg_2"]
+scale = Vector2( 1, 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bg_2/StaticBody2D"]
+polygon = PoolVector2Array( -119.634, 44.1342, 118.26, 44.9539, 118.26, 44.9539, 119.764, 78.5627, -119.257, 75.2838, -119.257, 75.2838 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2.37842, -16.6489 )
