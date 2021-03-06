@@ -3,9 +3,10 @@ extends KinematicBody2D
 var vel = Vector2(0,0)
 
 const SPEED = 1000
-const GRAVITY = 300
+const GRAVITY = 200
 const UP = Vector2(0,-1)
-const JUMP_FORCE = 3000
+const JUMP_FORCE = 2000
+const FALL_LIMIT = 600
 
 signal animate
 
@@ -30,6 +31,8 @@ func animate():
 	emit_signal("animate", vel)
 
 func apply_gravity():
+	
+	
 	if is_on_floor():
 		vel.y = 0
 	else:
@@ -38,3 +41,8 @@ func apply_gravity():
 func jump():
 	if Input.is_action_pressed("jump") and is_on_floor():
 		vel.y -= JUMP_FORCE
+		
+func death():
+	position.y = -400
+	$PlayerAnimation.play("death")
+	
