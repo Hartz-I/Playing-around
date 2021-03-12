@@ -16,6 +16,8 @@ func _physics_process(delta):
 	apply_gravity()
 	jump()
 	
+	death()
+	
 	move_and_slide(vel , UP)
 	
 func move():
@@ -43,6 +45,6 @@ func jump():
 		vel.y -= JUMP_FORCE
 		
 func death():
-	position.y = -400
-	$PlayerAnimation.play("death")
+	if position.y > 600:
+		get_tree().quit()
 	

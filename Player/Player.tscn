@@ -29,6 +29,8 @@ polygon = PoolVector2Array( -19.0204, 28.6373, -17.6058, 26.6001, -17.5047, 22.3
 position = Vector2( 76.9461, -30.9374 )
 scale = Vector2( 0.301205, 0.290698 )
 current = true
+limit_top = 0
+limit_bottom = 592
 limit_smoothed = true
 drag_margin_h_enabled = true
 
